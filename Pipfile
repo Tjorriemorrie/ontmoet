@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 zappa = "*"
+django = "*"
 
 [dev-packages]
+awscli = "*"
 
 [requires]
 python_version = "3.6"
