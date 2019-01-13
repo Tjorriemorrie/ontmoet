@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "ap-southeast-2",
+        "django_settings": "back.back.settings",
+        "profile_name": "ontmoetuser",
+        "project_name": "ontmoet",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-f9ys86669"
+    }
+}
