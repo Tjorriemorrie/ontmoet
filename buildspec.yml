@@ -8,16 +8,16 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo Installing pipenv...
-      - pip install pipenv
-      - echo Pipenv installed
-      - echo Installing depencencies
-      - pipenv install -d
-      - echo Dependencies installed
+      - echo Setting up virtualenv
+      - python -m venv venv
+      - source venv/bin/activate
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+      - pip install -r requirements-dev.txt
+      - echo Installing dependencies finished
   build:
     commands:
       - echo Deployment started
       - cd ontmoet
-      - pipenv shell
       - zappa update dev
       - echo Deployment finished
