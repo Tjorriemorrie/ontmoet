@@ -8,15 +8,15 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo Installing up pipenv...
+      - echo Installing pipenv...
       - pip install pipenv
       - echo Pipenv installed
       - echo Installing depencencies
-      - pipenv install
+      - pipenv install -d
       - echo Dependencies installed
   build:
     commands:
       - echo Deployment started
       - cd ontmoet
-      - pipenv run zappa update $ZAPPA_ENV
+      - pipenv run zappa update dev
       - echo Deployment finished
