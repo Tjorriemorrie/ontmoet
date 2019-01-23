@@ -18,5 +18,6 @@ phases:
     commands:
       - echo Deployment started
       - cd ontmoet
-      - pipenv run zappa update dev
+      - pipenv shell
+      - zappa update dev
       - echo Deployment finished
