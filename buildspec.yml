@@ -2,13 +2,21 @@ version: 0.2
 
 environment_variables:
   plaintext:
-    "ENV": "dev"
+    "PIPENV_DEV": 1
+    "ZAPPA_ENV": "dev"
 
 phases:
   install:
     commands:
-      - pip install zappa
+      - echo Installing up pipenv...
+      - pip install pipenv
+      - echo Pipenv installed
+      - echo Installing depencencies
+      - pipenv install
+      - echo Dependencies installed
   build:
     commands:
+      - echo Deployment started
       - cd ontmoet
-      - zappa update $ENV
+      - zappa update $ZAPPA_ENV
+      - echo Deployment finished
